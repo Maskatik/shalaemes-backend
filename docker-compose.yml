@@ -1,0 +1,23 @@
+services:
+  api:
+    build: .
+    image: shalaemes-api:latest
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      SHALAEMES_DATA_DIR: /data
+      PORT: "8080"
+      WEB_CONCURRENCY: "1"
+    ports:
+      - "127.0.0.1:8080:8080"
+    volumes:
+      - shalaemes_data:/data
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+volumes:
+  shalaemes_data:
