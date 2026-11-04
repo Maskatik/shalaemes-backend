@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+data/
+.env
+.env.production
+.env.*.local
+server.*.log
+deploy/.env
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
